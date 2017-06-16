@@ -29,7 +29,7 @@
       }
     }
   ],
-  "success_url": "/home",
+  "success_url": "/Home",
   "scripts": {
     "postdeploy": "bundle exec rake bootstrap"
   }
