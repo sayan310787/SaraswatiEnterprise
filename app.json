@@ -8,5 +8,29 @@
     {
       "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
     }
-  ]
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  },
+  "addons": [
+    "openredis",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "success_url": "/home",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  }
 }
