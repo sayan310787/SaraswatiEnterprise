@@ -1,0 +1,36 @@
+{
+  "name": "Saraswati Enterprise",
+  "description": "Test app by Sayan Roy",
+  "repository": "https://github.com/sayan310787/SaraswatiEnterprise",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["Sayan", "Angular", "Saraswati"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+    }
+  ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "bundle exec rake test"
+      }
+    }
+  },
+  "addons": [
+    "openredis",
+    {
+      "plan": "mongolab:shared-single-small",
+      "as": "MONGO"
+    },
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ],
+  "success_url": "/Home",
+  "scripts": {
+    "postdeploy": "bundle exec rake bootstrap"
+  }
+}
