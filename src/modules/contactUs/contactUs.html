@@ -1,0 +1,56 @@
+<div layout="column">
+  <div layout="row">
+  	<md-card layout="column">
+  		<md-card-title class="custom-title">
+        <md-card-title-text>
+          <span class="md-headline">Contact Us</span>
+        </md-card-title-text>
+      </md-card-title>
+        <div layout="row">
+          <img ng-src="src/images/Contact-us_square.jpg" alt="Washed Out" class="image-contact" flex="30"/>
+   			  <md-card-content flex="70" layout="column">
+  	  			<p flex>
+  	    		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  	  			</p>
+       			<md-button class="contact-us-button md-raised md-primary" aria-label="Meet Us" layout="row"
+       						ng-click="openContactUs($event)" layout-align="center-center">
+      				<ng-md-icon icon="call" class="button-color" size="45px"></ng-md-icon>
+      				<span>Click to Contact Us</span>
+    			  </md-button>
+      		</md-card-content>
+      	</div>
+  	</md-card>
+  	<md-card layout="column">
+  		<md-card-title class="custom-title">
+        <md-card-title-text>
+          <span class="md-headline">Meet Us</span>
+        </md-card-title-text>
+      </md-card-title>
+      <div layout="row">
+  			<img ng-src="src/images/contact_us_mian.jpg" alt="Washed Out" class="image-contact" flex="30"/>
+          <md-card-content flex="70" layout="column">
+  	  			<p flex>
+  	    		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  	  			</p>
+       			<md-button class="contact-us-button md-raised md-primary" aria-label="Meet Us" layout="row" 
+       						ng-click="openMeetUs($event)" layout-align="center-center">
+      				<ng-md-icon icon="business" class="button-color" size="45px"></ng-md-icon>
+      				<span>Click to meet us</span>
+      			</md-button>
+      		</md-card-content>
+      	</div>
+  	</md-card>
+  </div>
+  <div>
+  	<md-card layout="column">
+  				<md-card-title class="custom-title">
+            <md-card-title-text>
+              <span class="md-headline">Locate Us</span>
+            </md-card-title-text>
+          </md-card-title>
+          <div layout="row" layout-align="center center" style="padding-bottom: 10px;">
+          	<div id="map" style="width: 90%; height: 225px;"></div>
+      	</div>
+  	</md-card>
+  </div>
+</div>

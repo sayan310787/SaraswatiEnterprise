@@ -1,0 +1,39 @@
+<div layout="column">
+<md-card>
+	<md-card-title class="custom-title">
+	    <md-card-title-text>
+	      <span class="md-headline">About Us</span>
+	    </md-card-title-text>
+    </md-card-title>
+    <md-divider class="custom-divider"></md-divider>
+	<md-card-content layout="row">
+	<div id="chartContainer" style="height: 300px; width: 50%;"></div>
+	  	<p flex="40" layout-align="start-center" style="padding-left: 20px; padding-top: 15px">
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+		</p>
+	</md-card-content>
+</md-card>
+<md-card>
+	<md-card-title class="custom-title">
+	    <md-card-title-text>
+	      <span class="md-headline">Our team</span>
+	    </md-card-title-text>
+    </md-card-title>
+    <md-divider class="custom-divider"></md-divider>
+    <md-card-content layout="row">
+    	<div ng-repeat="item in ourTeam">
+    		<div layout="column" class="ourteam-text" flex="80">
+    			<img ng-src="{{item.image}}" class="image-aboutUs" alt="{{item.name}}" />
+	    		<div layout="column" layout-align="center-center">
+		            <h3 style="-webkit-margin-after: 0px;">{{ item.name}}</h3>
+		            <h4 style="-webkit-margin-before: 5px;-webkit-margin-after: 5px;">{{ item.designation}}</h4>
+		            <div layout="row">
+		            	<ng-md-icon icon="facebook" class="button-color-ourTeam" size="30px" ng-click="item.facebook" ></ng-md-icon>
+		            	<ng-md-icon icon="twitter" class="button-color-ourTeam" size="30px" ng-click="item.twitter" ></ng-md-icon>
+		            </div>
+          		</div>
+    		</div>
+    	</div>
+    </md-card-content>
+</md-card>
+</div>

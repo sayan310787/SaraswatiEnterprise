@@ -1,0 +1,58 @@
+<md-dialog aria-label="Meet Us" class="meet-us-dialog">
+  <form name="userForm" novalidate>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Schedule a Meeting</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close" aria-label="Close dialog" class="button-color" size="30px"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content class="md-no-momentum">
+      <div class="md-dialog-content">
+          <!-- <ng-md-icon icon="{{item.icon}}" class="md-avatar" alt="{{item.icon}}" size="35px"></ng-md-icon> -->
+        <md-input-container class="md-block" layout="row">
+          <label>Your Name Please</label>
+<!--           <ng-md-icon icon="perm_identity" size="30px"></ng-md-icon> -->
+          <input name="name" ng-model="mail.name" required>
+          <div ng-messages="userForm.name.$error" role="alert">
+            <div ng-message="required" class="my-message">You must enter your name.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Your Mobile Number Please</label>
+<!--           <ng-md-icon icon="phonelink_ring" size="30px"></ng-md-icon> -->
+          <input name="mobileNumber" ng-model="mail.mobileNumber" placeholder="98xxxxxx00"
+                 required ng-pattern="/^[0-9]{10}$/" md-maxlength="10">
+          <div ng-messages="userForm.mobileNumber.$error" role="alert" multiple>
+            <div ng-message="required" class="my-message">You must enter your mobile number.</div>
+            <div ng-message="pattern" class="my-message">That doesn't look like a valid mobile number.</div>
+            <div ng-message="md-maxlength" class="my-message">That doesn't look like a valid mobile number.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Your Email Please</label>
+<!--           <ng-md-icon icon="email" size="30px"></ng-md-icon> -->
+          <input ng-model="mail.email" type="email" md-placeholder="example@test.com" required>
+          <div ng-messages="userForm.name.$error" role="alert">
+            <div ng-message="required" class="my-message">You must enter your email.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Please Enter the date you want to meet us</label>
+          <md-datepicker ng-model="mail.todayDate" md-placeholder="Enter date"></md-datepicker>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Subject of the mail:</label>
+<!--           <ng-md-icon icon="comment" size="30px"></ng-md-icon> -->
+          <input ng-model="mail.subject" md-placeholder="Enter subject" required>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <md-button class="meet-us-dialog-button md-raised md-primary" aria-label="Cancel" ng-click="cancel()">Cancel</md-button>
+      <md-button class="meet-us-dialog-button md-raised md-primary" type="submit" aria-label="Submit" ng-click="sendMail(userForm)">Send Mail</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

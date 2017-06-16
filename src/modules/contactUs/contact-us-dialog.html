@@ -1,0 +1,25 @@
+<md-dialog aria-label="Contact Us" class="meet-us-dialog">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Contact Details</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <ng-md-icon icon="close" aria-label="Close dialog" class="button-color" size="30px"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-list-item class="md-3-line" ng-repeat="item in contactTypes" ng-click="null">
+          <ng-md-icon icon="{{item.icon}}" class="md-avatar" alt="{{item.icon}}" size="35px"></ng-md-icon>
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ item.subHeading }}</h3>
+            <h4>{{ item.details }}</h4>
+            <!-- <p>{{ item.notes }}</p> -->
+          </div>
+        </md-list-item>
+      </div>
+    </md-dialog-content>
+  </form>
+</md-dialog>
